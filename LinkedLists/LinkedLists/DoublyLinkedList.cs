@@ -27,19 +27,19 @@
             while (current != null && current.Data!.CompareTo(data) <= 0)
                 current = current.Next;
 
-            if (current == null) // Insert at the end
+            if (current == null)
             {
                 newNode.Previous = _tail;
                 _tail!.Next = newNode;
                 _tail = newNode;
             }
-            else if (current.Previous == null) // Insert at the beginning
+            else if (current.Previous == null) 
             {
                 newNode.Next = _head;
                 _head.Previous = newNode;
                 _head = newNode;
             }
-            else // Insert in the middle
+            else 
             {
                 newNode.Previous = current.Previous;
                 newNode.Next = current;
